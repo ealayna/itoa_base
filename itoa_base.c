@@ -1,5 +1,6 @@
 #include<stdlib.h>
-#include<strings.h>
+#include<string.h>
+
 static void ft_alph(char *s)
 {
     if (!(*s))
@@ -17,7 +18,8 @@ static char *ft_base(char *s)
     return(s);
 }
 
-static char *ft_nitoa(long long int i, long long int *l, char *s, int k, int base)
+static char *ft_nitoa(long long int i, long long int *l,
+                      char *s, int k, int base)
 {
     if (i / base == 0)
     {
@@ -33,7 +35,8 @@ static char *ft_nitoa(long long int i, long long int *l, char *s, int k, int bas
     return(s);
 }
 
-static char *ft_pitoa(long long int i, long long int *l, char *s, int k, int base)
+static char *ft_pitoa(long long int i, long long int *l,
+                      char *s, int k, int base)
 {
     if (i / base == 0)
     {
