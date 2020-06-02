@@ -29,7 +29,8 @@ static char *ft_nitoa(long long int i, long long int *l,
         s[k + 1] = '\0';
     }
     else
-        s = ft_nitoa(i / base, l, s, k + 1, base);
+        if(!(s = ft_nitoa(i / base, l, s, k + 1, base)))
+            return(NULL);
     s[k] = '0' - *l % base;
     *l = *l / base;
     return(s);
@@ -45,7 +46,8 @@ static char *ft_pitoa(long long int i, long long int *l,
         s[k + 1] = '\0';
     }
     else
-        s = ft_pitoa(i / base, l, s, k + 1, base);
+        if(!(s = ft_pitoa(i / base, l, s, k + 1, base)))
+            return(NULL);
     s[k] = '0' + *l % base;
     *l = *l / base;
     return(s);
